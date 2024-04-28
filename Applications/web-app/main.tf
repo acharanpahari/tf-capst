@@ -138,7 +138,7 @@ module "web_linux_vm" {
   linux_vm_admin               = data.azurerm_key_vault_secret.username.value
   linux_vm_password            = data.azurerm_key_vault_secret.password.value
   linux_vm_nic_ids             = ["${module.web_app_vm_nic.nic_id}"]
-  linux_vm_osDisk_caching      = "Read"
+  linux_vm_osDisk_caching      = "None"
   linux_vm_osDisk_storage_type = "Standard_LRS"
   linux_vm_osDisk_size         = 4
   linux_vm_image_offer         = "Canonical"
