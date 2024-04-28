@@ -1,0 +1,5 @@
+#Todo
+Fill details for backend
+ Create a storage account in a new resource group
+Fill details for key vault secrets
+ Create a key vault and scerets in that key vault in another resource group
