@@ -69,7 +69,7 @@ module "web_app_nsg" {
       source_port      = "22"
       destination_port = "22"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = var.subnet_cidr
+      destination_cidr = "${var.subnet_cidr}"
     },
     {
       name             = "allow_ssh_out"
@@ -78,7 +78,7 @@ module "web_app_nsg" {
       source_port      = "22"
       destination_port = "22"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = var.subnet_cidr
+      destination_cidr = "${var.subnet_cidr}"
     },
     {
       name             = "allow_http_in"
@@ -87,7 +87,7 @@ module "web_app_nsg" {
       source_port      = "80"
       destination_port = "80"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = var.subnet_cidr
+      destination_cidr = "${var.subnet_cidr}"
     },
     {
       name             = "allow_http_out"
@@ -96,7 +96,7 @@ module "web_app_nsg" {
       source_port      = "80"
       destination_port = "80"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = var.subnet_cidr
+      destination_cidr = "${var.subnet_cidr}"
     },
   ]
   nsg_tags = local.common_tags
