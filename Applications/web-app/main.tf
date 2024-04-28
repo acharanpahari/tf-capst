@@ -63,7 +63,7 @@ module "web_app_nsg" {
   nsg_rg       = module.web_app_rg.resource_group_name
   nsg_rules = [
     {
-      name             = allow_ssh_in
+      name             = "allow_ssh_in"
       priority         = 101
       direction        = "Inbound"
       source_port      = "22"
@@ -72,7 +72,7 @@ module "web_app_nsg" {
       destination_cidr = var.subnet_cidr
     },
     {
-      name             = allow_ssh_out
+      name             = "allow_ssh_out"
       priority         = 102
       direction        = "Outbound"
       source_port      = "22"
@@ -81,7 +81,7 @@ module "web_app_nsg" {
       destination_cidr = var.subnet_cidr
     },
     {
-      name             = allow_http_in
+      name             = "allow_http_in"
       priority         = 103
       direction        = "Inbound"
       source_port      = "80"
@@ -90,7 +90,7 @@ module "web_app_nsg" {
       destination_cidr = var.subnet_cidr
     },
     {
-      name             = allow_http_out
+      name             = "allow_http_out"
       priority         = 104
       direction        = "Outbound"
       source_port      = "80"
