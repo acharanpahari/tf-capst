@@ -17,7 +17,7 @@ resource "azurerm_network_security_group" "nsg" {
       source_port_range          = security_rule.value.source_port
       destination_port_range     = security_rule.value.destination_port
       source_address_prefix      = security_rule.value.source_cidr
-      destination_address_prefix = security_rule.value.destination_cidr
+      destination_address_prefix = "${security_rule.value.destination_cidr}"
     }
   }
 
