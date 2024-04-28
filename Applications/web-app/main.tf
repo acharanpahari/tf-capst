@@ -12,6 +12,7 @@ variable "vm_size" {
 
 
 locals {
+  subnet = "11.10.12.0/27"
   location = "West US"
   common_tags = {
     "environment" = "dev"
@@ -69,7 +70,7 @@ module "web_app_nsg" {
       source_port      = "22"
       destination_port = "22"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = "${var.subnet_cidr}"
+      destination_cidr = "${local.subnet}"
     },
     {
       name             = "allow_ssh_out"
@@ -78,7 +79,7 @@ module "web_app_nsg" {
       source_port      = "22"
       destination_port = "22"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = "${var.subnet_cidr}"
+      destination_cidr = "${local.subnet}"
     },
     {
       name             = "allow_http_in"
@@ -87,7 +88,7 @@ module "web_app_nsg" {
       source_port      = "80"
       destination_port = "80"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = "${var.subnet_cidr}"
+      destination_cidr = "${local.subnet}"
     },
     {
       name             = "allow_http_out"
@@ -96,7 +97,7 @@ module "web_app_nsg" {
       source_port      = "80"
       destination_port = "80"
       source_cidr      = "0.0.0.0/0"
-      destination_cidr = "${var.subnet_cidr}"
+      destination_cidr = "${local.subnet}"
     },
   ]
   nsg_tags = local.common_tags
