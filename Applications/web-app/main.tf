@@ -132,7 +132,7 @@ module "web_app_public_ip" {
 
 module "web_linux_vm" {
   source                       = "../../Modules/linux-vm"
-  linux_vm_name                = "web_app_vm"
+  linux_vm_name                = "web-app-vm"
   linux_vm_location            = module.web_app_rg.resource_group_location
   linux_vm_rg                  = module.web_app_rg.resource_group_name
   linux_vm_size                = var.vm_size
