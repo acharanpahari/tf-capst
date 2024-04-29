@@ -44,18 +44,6 @@ module "web_app_subnet" {
   subnet_cidr = var.subnet_cidr
 }
 
-module "web_app_route_table" {
-  source                            = "../../Modules/route-table"
-  route_table_name                  = "web_app_rt"
-  route_table_location              = module.web_app_rg.resource_group_location
-  route_table_rg                    = module.web_app_rg.resource_group_name
-  route_table_tags                  = local.common_tags
-  route_name                        = "web_app_route"
-  route_cidr                        = "0.0.0.0/0"
-  route_next_hop                    = "VirtualAppliance"
-  route_next_hop_ip                 = module.web_app_public_ip.public_ip
-  route_table_subnet_id_association = module.web_app_subnet.subnet_id
-}
 
 module "web_app_nsg" {
   source       = "../../Modules/nsg"
