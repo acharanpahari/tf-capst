@@ -5,6 +5,8 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   size                = var.linux_vm_size
   admin_username      = var.linux_vm_admin
   admin_password = var.linux_vm_password
+
+  computer_name = var.linux_vm_name
   
   network_interface_ids = var.linux_vm_nic_ids
 
