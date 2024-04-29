@@ -141,10 +141,10 @@ module "web_linux_vm" {
   linux_vm_nic_ids             = ["${module.web_app_vm_nic.nic_id}"]
   linux_vm_osDisk_caching      = "None"
   linux_vm_osDisk_storage_type = "Standard_LRS"
-  linux_vm_osDisk_size         = 4
-  linux_vm_image_offer         = "canonical"
-  linux_vm_image_publisher     = "0001-com-ubuntu-server-jammy"
-  linux_vm_image_sku           = "22_04-lts"
+  linux_vm_osDisk_size         = 30
+  linux_vm_image_offer         = "0001-com-ubuntu-server-focal"
+  linux_vm_image_publisher     = "canonical"
+  linux_vm_image_sku           = "20_04-lts-gen2"
   linux_vm_image_version       = "latest"
 }
 
