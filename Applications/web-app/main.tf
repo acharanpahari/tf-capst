@@ -64,41 +64,14 @@ module "web_app_nsg" {
   nsg_rg       = module.web_app_rg.resource_group_name
   nsg_rules = [
     {
-      name             = "allow_ssh_in"
-      priority         = 101
-      direction        = "Inbound"
-      source_port      = "22"
-      destination_port = "22"
-      source_cidr      = "0.0.0.0/0"
-      destination_cidr = "${local.subnet}"
-    },
-    {
-      name             = "allow_ssh_out"
-      priority         = 102
-      direction        = "Outbound"
-      source_port      = "22"
-      destination_port = "22"
-      source_cidr      = "0.0.0.0/0"
-      destination_cidr = "${local.subnet}"
-    },
-    {
       name             = "allow_http_in"
       priority         = 103
       direction        = "Inbound"
-      source_port      = "80"
+      source_port      = "*"
       destination_port = "80"
       source_cidr      = "0.0.0.0/0"
       destination_cidr = "${local.subnet}"
-    },
-    {
-      name             = "allow_http_out"
-      priority         = 104
-      direction        = "Outbound"
-      source_port      = "80"
-      destination_port = "80"
-      source_cidr      = "0.0.0.0/0"
-      destination_cidr = "${local.subnet}"
-    },
+    }
   ]
   nsg_tags = local.common_tags
 }
