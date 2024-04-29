@@ -41,3 +41,6 @@ variable "linux_vm_image_sku" {
 variable "linux_vm_image_version" {
   
 }
+variable "ssh_key" {
+  
+}

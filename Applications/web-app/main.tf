@@ -137,7 +137,6 @@ module "web_linux_vm" {
   linux_vm_rg                  = module.web_app_rg.resource_group_name
   linux_vm_size                = var.vm_size
   linux_vm_admin               = data.azurerm_key_vault_secret.username.value
-  linux_vm_password            = data.azurerm_key_vault_secret.password.value
   linux_vm_nic_ids             = ["${module.web_app_vm_nic.nic_id}"]
   linux_vm_osDisk_caching      = "None"
   linux_vm_osDisk_storage_type = "Standard_LRS"
@@ -146,6 +145,7 @@ module "web_linux_vm" {
   linux_vm_image_publisher     = "canonical"
   linux_vm_image_sku           = "20_04-lts-gen2"
   linux_vm_image_version       = "latest"
+  ssh_key = file("./ssh/id_rsa.pub")
 }
 
 

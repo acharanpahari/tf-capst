@@ -4,14 +4,17 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   location            = var.linux_vm_location
   size                = var.linux_vm_size
   admin_username      = var.linux_vm_admin
-  admin_password = var.linux_vm_password
+  
 
   computer_name = var.linux_vm_name
-  
+  custom_data = file("./customData.sh") 
   network_interface_ids = var.linux_vm_nic_ids
 
  
-
+  admin_ssh_key {
+    username   = var.linux_vm_admin
+    public_key = var.ssh_key
+  }
   os_disk {
     caching              = var.linux_vm_osDisk_caching
     storage_account_type = var.linux_vm_osDisk_storage_type
