@@ -7,7 +7,7 @@ variable "subnet_cidr" {
 }
 
 variable "vm_size" {
-  default = "Standard_B2"
+  default = "Standard_B1s"
 }
 
 
@@ -142,9 +142,9 @@ module "web_linux_vm" {
   linux_vm_osDisk_caching      = "None"
   linux_vm_osDisk_storage_type = "Standard_LRS"
   linux_vm_osDisk_size         = 4
-  linux_vm_image_offer         = "Canonical"
-  linux_vm_image_publisher     = "0001=-com-ubuntu-server-jammy"
-  linux_vm_image_sku           = "22_04_lts"
+  linux_vm_image_offer         = "canonical"
+  linux_vm_image_publisher     = "0001-com-ubuntu-server-jammy"
+  linux_vm_image_sku           = "22_04-lts"
   linux_vm_image_version       = "latest"
 }
 
