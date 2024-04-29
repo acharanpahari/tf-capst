@@ -13,9 +13,7 @@ variable "linux_vm_size" {
 variable "linux_vm_admin" {
   
 }
-variable "linux_vm_password" {
-  
-}
+
 variable "linux_vm_nic_ids" {
   type = list(string)
   
