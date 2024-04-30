@@ -22,4 +22,4 @@ vm_image_offer = "0001-com-ubuntu-server-focal"
 vm_image_publisher = "canonical"
 vm_image_sku = "20_04-lts-gen2"
 vm_image_version = "latest"
-vm_ssh_key = file("./ssh/id_rsa.pub")
+
