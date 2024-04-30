@@ -68,6 +68,3 @@ variable "vm_image_version" {
   default = "latest"
 }
 
-variable "vm_ssh_key" {
-  default = file("./ssh/id_rsa.pub")
-}
