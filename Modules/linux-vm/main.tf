@@ -13,7 +13,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
  
   admin_ssh_key {
     username   = var.linux_vm_admin
-    public_key = var.ssh_key
+    public_key = tls_private_key.ssh-key.public_key_openssh
   }
   os_disk {
     caching              = var.linux_vm_osDisk_caching
@@ -27,4 +27,36 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
     sku       = var.linux_vm_image_sku
     version   = var.linux_vm_image_version
   }
+}
+
+terraform {
+  required_providers {
+    tls = {
+      source = "hashicorp/tls"
+      version = "4.0.5"
+    }
+
+    local = {
+      source = "hashicorp/local"
+      version = "2.5.1"
+    }
+  }
+}
+
+provider "tls" {
+  # Configuration options
+}
+provider "local" {
+  # Configuration options
+}
+
+
+resource "tls_private_key" "ssh-key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "local_sensitive_file" "ssh_key_file" {
+  content  = tls_private_key.ssh-key.private_key_pem
+  filename = "./sshkey.pem"
 }

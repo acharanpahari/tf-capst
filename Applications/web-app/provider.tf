@@ -3,10 +3,3 @@ provider "azurerm" {
   features {}
 }
 
-provider "tls" {
-  # Configuration options
-}
-
-provider "local" {
-  # Configuration options
-}
