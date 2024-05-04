@@ -1,10 +1,4 @@
 
-locals {
-  subnet = var.subnet_cidr[0]
-  location = var.location
-  common_tags = var.tags
-}
-
 module "web_app_rg" {
   source                  = "../../Modules/resource-group"
   resource_group_name     = var.rg_name
