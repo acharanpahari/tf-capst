@@ -1,6 +1,6 @@
 
 data "azurerm_key_vault" "key_vault" {
-  name                = "mykeyvault"
+  name                = "creds-kv"
   resource_group_name = "kvaults-rg"
 }
 
