@@ -68,3 +68,10 @@ variable "vm_image_version" {
   default = "latest"
 }
 
+variable "vm_username_keyVault" {
+  default = "creds-kv"
+}
+
+variable "vm_username_keyVault_rg" {
+  default = "kvaults-rg"
+}

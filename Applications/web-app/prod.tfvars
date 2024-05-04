@@ -22,4 +22,5 @@ vm_image_offer = "0001-com-ubuntu-server-focal"
 vm_image_publisher = "canonical"
 vm_image_sku = "20_04-lts-gen2"
 vm_image_version = "latest"
-
+vm_username_keyVault = "creds-kv"
+vm_username_keyVault_rg = "kvaults-rg"
