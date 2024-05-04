@@ -85,8 +85,7 @@ module "web_linux_vm" {
   linux_vm_image_publisher     = var.vm_image_publisher
   linux_vm_image_sku           = var.vm_image_sku
   linux_vm_image_version       = var.vm_image_version
-  //ssh_key                      = data.azurerm_key_vault_secret.ssh-public-key.value
-  //ssh_key = tls_private_key.ssh-key.public_key_openssh
+  
 }
 
 
