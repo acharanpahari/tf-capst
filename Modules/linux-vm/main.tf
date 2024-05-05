@@ -8,7 +8,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 
   computer_name = var.linux_vm_name
   
-  custom_data = ""
+  custom_data = data.cloudinit_config.bash.rendered
   network_interface_ids = var.linux_vm_nic_ids
 
  
