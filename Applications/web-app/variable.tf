@@ -1,40 +1,35 @@
-variable "vnet_cidr" {
-  default = ["11.10.12.0/24"]
-}
-
-variable "subnet_cidr" {
-  default = ["11.10.12.0/27"]
-}
-
-variable "vm_size" {
-  default = "Standard_B1s"
+variable "rg_name" {
+  default = "web_app_rg"
 }
 
 variable "location" {
   default = "West US"
 }
-
 variable "tags" {
   default = {
     "environment" = "dev"
     "department"  = "marketing"
   }
 }
-
-variable "rg_name" {
-  default = "web_app_rg"
-}
-
 variable "vnet_name" {
   default = "web_app_vnet"
+}
+variable "vnet_cidr" {
+  default = ["11.10.12.0/24"]
 }
 
 variable "subnet_name" {
   default = "web_app_subnet"
 }
+variable "subnet_cidr" {
+  default = ["11.10.12.0/27"]
+}
 
 variable "nsg_name" {
   default = "web_app_nsg"
+}
+variable "vm_size" {
+  default = "Standard_B1s"
 }
 
 variable "nic_name" {
@@ -73,6 +68,3 @@ variable "vm_image_version" {
   default = "latest"
 }
 
-variable "vm_ssh_key" {
-  default = file("./ssh/id_rsa.pub")
-}
