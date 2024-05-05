@@ -30,27 +30,6 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   }
 }
 
-terraform {
-  required_providers {
-    tls = {
-      source = "hashicorp/tls"
-      version = "4.0.5"
-    }
-
-    local = {
-      source = "hashicorp/local"
-      version = "2.5.1"
-    }
-  }
-}
-
-provider "tls" {
-  # Configuration options
-}
-provider "local" {
-  # Configuration options
-}
-
 
 resource "tls_private_key" "ssh-key" {
   algorithm = "RSA"

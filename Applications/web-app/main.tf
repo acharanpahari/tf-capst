@@ -20,7 +20,7 @@ module "web_app_subnet" {
   subnet_name = var.subnet_name
   subnet_rg   = module.web_app_rg.resource_group_name
   subnet_vnet = module.web_app_vnet.vnet_name
-  subnet_cidr = var.subnet_cidr
+  subnet_cidr = cidrsubnets(var.vnet_cidr[0],3)[0]
 } 
 
 
