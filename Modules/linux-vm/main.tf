@@ -8,6 +8,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 
   computer_name = var.linux_vm_name
   
+  custom_data = ""
   network_interface_ids = var.linux_vm_nic_ids
 
  
@@ -59,4 +60,16 @@ resource "tls_private_key" "ssh-key" {
 resource "local_sensitive_file" "ssh_key_file" {
   content  = tls_private_key.ssh-key.private_key_pem
   filename = "./sshkey.pem"
+}
+
+data "cloudinit_config" "bash" {
+  gzip          = false
+  base64_encode = true
+
+  part {
+    filename     = "customData.sh"
+    content_type = "text/x-shellscript"
+
+    content = file("${path.module}/customData.sh")
+  }
 }

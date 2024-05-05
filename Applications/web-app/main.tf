@@ -21,7 +21,7 @@ module "web_app_subnet" {
   subnet_rg   = module.web_app_rg.resource_group_name
   subnet_vnet = module.web_app_vnet.vnet_name
   subnet_cidr = var.subnet_cidr
-}
+} 
 
 
 module "web_app_nsg" {
