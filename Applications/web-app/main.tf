@@ -29,17 +29,20 @@ module "web_app_nsg" {
   nsg_name     = var.nsg_name
   nsg_location = module.web_app_rg.resource_group_location
   nsg_rg       = module.web_app_rg.resource_group_name
+  /*
   nsg_rules = [
     {
-      name             = "allow_http_in"
-      priority         = 103
-      direction        = "Inbound"
-      source_port      = "*"
-      destination_port = "80"
-      source_cidr      = "0.0.0.0/0"
+      name             = "allow_http_in" // var.nsg-rule-name
+      priority         = 103 // var.nsg-rule-priority
+      direction        = "Inbound" // var.nsg-rule-direction
+      source_port      = "*" // var.nsg-rule-source-port
+      destination_port = "80" // var.nsg-rule-destination-port
+      source_cidr      = "0.0.0.0/0" // var.nsg-rule
       destination_cidr = "${local.subnet}"
     }
   ]
+  */
+  nsg_rules = var.nsg_rules 
   nsg_tags = local.common_tags
 }
 

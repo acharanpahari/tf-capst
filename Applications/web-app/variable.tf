@@ -75,3 +75,7 @@ variable "vm_username_keyVault" {
 variable "vm_username_keyVault_rg" {
   default = "kvaults-rg"
 }
+
+variable "nsg_rules" {
+
+}

@@ -24,3 +24,15 @@ vm_image_sku = "20_04-lts-gen2"
 vm_image_version = "latest"
 vm_username_keyVault = "creds-kv"
 vm_username_keyVault_rg = "kvaults-rg"
+
+nsg_rules = [
+    {
+      name             = "allow_http_in" // var.nsg-rule-name
+      priority         = 103 // var.nsg-rule-priority
+      direction        = "Inbound" // var.nsg-rule-direction
+      source_port      = "*" // var.nsg-rule-source-port
+      destination_port = "80" // var.nsg-rule-destination-port
+      source_cidr      = "0.0.0.0/0" // var.nsg-rule
+      destination_cidr = "${local.subnet}"
+    }
+  ]
