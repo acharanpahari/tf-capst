@@ -27,12 +27,12 @@ vm_username_keyVault_rg = "kvaults-rg"
 
 nsg_rules = [
     {
-      name             = "allow_http_in" // var.nsg-rule-name
-      priority         = 103 // var.nsg-rule-priority
-      direction        = "Inbound" // var.nsg-rule-direction
-      source_port      = "*" // var.nsg-rule-source-port
-      destination_port = "80" // var.nsg-rule-destination-port
-      source_cidr      = "0.0.0.0/0" // var.nsg-rule
+      name             = "allow_http_in" 
+      priority         = 103 
+      direction        = "Inbound" 
+      source_port      = "*" 
+      destination_port = "80" 
+      source_cidr      = "0.0.0.0/0" 
       destination_cidr = "10.11.12.0/27"
     }
   ]
