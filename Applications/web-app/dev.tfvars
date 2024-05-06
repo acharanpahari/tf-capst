@@ -33,6 +33,6 @@ nsg_rules = [
       source_port      = "*" // var.nsg-rule-source-port
       destination_port = "80" // var.nsg-rule-destination-port
       source_cidr      = "0.0.0.0/0" // var.nsg-rule
-      destination_cidr = "${local.subnet}"
+      destination_cidr = "10.11.12.0/27"
     }
   ]
